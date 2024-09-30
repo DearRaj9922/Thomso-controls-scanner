@@ -6,7 +6,7 @@ import Navbar from "../Navbar/Navbar";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{width:"100vw",height:"100vh",overflowX:"hidden"}}>
       <Navbar />
       {localStorage.getItem("token") && (
         <>
@@ -18,25 +18,26 @@ const Home = () => {
               height: "100vh",
               flexDirection: "column",
               gap: "5%",
+              backgroundColor:"gray",
             }}
           >
             <Link to={"/controlscan"}>
-              <Button color="primary" fill="solid">
+              <Button style={{width:"60vw",height:"5vh",fontSize:"25px",display:"flex",justifyContent:"center",alignItems:"center"}} color="primary" fill="solid">
                 Controls scan
               </Button>
             </Link>
             <Link to={"/eventsScan"}>
-              <Button color="primary" fill="solid">
+              <Button style={{width:"60vw",height:"5vh",fontSize:"25px",display:"flex",justifyContent:"center",alignItems:"center"}} color="primary" fill="solid">
                 Events scan
               </Button>
             </Link>
             <Link to={"/thomsoidinput"}>
-              <Button color="primary" fill="solid">
+              <Button style={{width:"60vw",height:"5vh",fontSize:"25px",display:"flex",justifyContent:"center",alignItems:"center"}} color="primary" fill="solid">
                 controls input
               </Button>
             </Link>
             <Link to={"/eventsidinput"}>
-              <Button color="primary" fill="solid">
+              <Button style={{width:"60vw",height:"5vh",fontSize:"25px",display:"flex",justifyContent:"center",alignItems:"center"}} color="primary" fill="solid">
                 Events input
               </Button>
             </Link>

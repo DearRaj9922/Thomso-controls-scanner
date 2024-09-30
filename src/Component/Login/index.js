@@ -33,8 +33,9 @@ const Login = () => {
   };
 
   return (
-    <div style={{ padding: "5%" }}>
-      <h1>Thomso'22 Controls Login</h1>
+    <div style={{ padding: "5%",width:"100vw",height:"100vh",display:"flex",flexDirection:"column",justifyContent:"center",backgroundColor:"gray"}}>
+      <div style={{padding:"3%",backgroundColor:"white",borderRadius:"10px"}} className="logwrap">
+      <h1 style={{fontSize:"6vw",display:"flex",justifyContent:"center"}}>Thomso'24 Controls Login</h1>
       <Form
         name="basic"
         initialValues={{
@@ -59,6 +60,7 @@ const Login = () => {
         <Form.Item
           label="Password"
           name="password"
+          
           rules={[
             {
               required: true,
@@ -68,10 +70,11 @@ const Login = () => {
         >
           <Input.Password />
         </Form.Item>
-        <Button type="primary" htmlType="submit">
+        <Button style={{width:"84.5vw"}} type="primary" htmlType="submit">
           Submit
         </Button>
       </Form>
+      </div>
     </div>
   );
 };

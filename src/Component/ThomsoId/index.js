@@ -25,8 +25,9 @@ const ThomsoIDComponent = ({ history }) => {
   };
 
   const onSearch = (value) => {
-    console.log(value);
+    console.log(value,"eaw");
     fetchData(value);
+    
   };
 
   const fetchData = async (value = search) => {
@@ -51,14 +52,14 @@ const ThomsoIDComponent = ({ history }) => {
 
 
   return (
-    <div>
+    <div style={{width:"100vw",height:"100vh",backgroundColor:"gray"}}>
       <Navbar />
       {result ? (
          <>
           <Profile data={result}/>
          </>
         ) : 
-      (<><h1 className="scan">Enter thomso id</h1>
+      (<><h1 style={{display:"flex",justifyContent:"center",padding:"10px",fontSize:"35px"}} className="scan">Enter Thomso Id</h1>
       <div style={{ padding: "10px" }}>
         <Search
           placeholder="Search Thomso ID"

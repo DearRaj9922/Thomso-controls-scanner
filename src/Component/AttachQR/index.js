@@ -50,9 +50,9 @@ const Attachqr = ({ history }) => {
       });
   };
   return (
-    <div>
+    <div style={{backgroundColor:"gray",width:"100vw",height:"100vh",overflowX:"hidden"}}>
       <Navbar />
-      <h1 className="scan">Controls scan</h1>
+      <h1 style={{display:"flex",justifyContent:"center",padding:"10px",fontSize:"40px"}} className="scan">Controls scan</h1>
 
       <div>
         {result ? (
@@ -68,6 +68,8 @@ const Attachqr = ({ history }) => {
             onResult={async (result, error) => {
               if (!!result) {
                 try {
+                  console.log(result,"asdasda")
+                  console.log(headers,"hsgfugs")
                   const response = await axios.post(
                     `https://api2.thomso.in/apiV1/get_participant_data`,
                     { id: result?.text },
@@ -78,6 +80,7 @@ const Attachqr = ({ history }) => {
                   console.log(u, "uder");
                   setResult(u);
                 } catch (error) {
+                  console.log(result,"fsdf")
                   message.error("user not found");
                   console.error("Error:", error);
                 }

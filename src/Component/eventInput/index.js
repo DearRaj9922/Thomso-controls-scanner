@@ -55,7 +55,7 @@ const EVENTSIDComponent = ({ history }) => {
   };
 
   return (
-    <div>
+    <div style={{width:"100vw",height:"100vh",backgroundColor:"gray"}}>
       <Navbar />
       {error && (
         <>
@@ -138,7 +138,7 @@ const EVENTSIDComponent = ({ history }) => {
         </>
       ) : (
         <>
-          <h1 className="scan">Enter Event Code</h1>
+          <h1 style={{display:"flex",justifyContent:"center",fontSize:"40px"}} className="scan">Enter Event Code</h1>
           <div style={{ padding: "10px" }}>
             <Search
               placeholder="Search Events Code"

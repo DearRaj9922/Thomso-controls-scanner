@@ -96,7 +96,7 @@ const Profile = ({ data }) => {
           ) : (
             <button
               className="btn"
-              style={{ width: "200px", marginTop: "20px", fontSize: "16px" }}
+              style={{ width: "200px", marginTop: "20px", fontSize: "25px" }}
               onClick={checkIn}
             >
               Check In

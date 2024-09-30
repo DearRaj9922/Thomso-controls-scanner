@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function Navbar() {
   const navigate = useNavigate();
   return (
-    <div className="nav">
+    <div className="nav" style={{width:"100vw",height:"10vh",display:"flex",padding:"10px 30px",alignItems:"center",justifyContent:"space-between",fontSize:"4vw",backgroundColor:"black",color:"white"}}>
       <span
         className="home-button"
         onClick={() => {
@@ -17,6 +17,7 @@ function Navbar() {
         <>
           <button
             className="Login"
+            style={{backgroundColor:"blue",borderRadius:"4px"}}
             onClick={() => {
               localStorage.removeItem("token");
               window.location.reload(false);
@@ -29,6 +30,7 @@ function Navbar() {
         <>
           <button
             className="Login"
+            style={{backgroundColor:"blue",borderRadius:"4px"}}
             onClick={() => {
               navigate("/login");
             }}

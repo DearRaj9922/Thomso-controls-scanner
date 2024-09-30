@@ -46,7 +46,7 @@ const EventsScan = ({ history }) => {
       });
   };
   return (
-    <div>
+    <div style={{width:"100vw",height:"100vh",backgroundColor:"gray"}}>
       <Navbar back="Back" onBack={back}>
         <b>EventsScan</b>
       </Navbar>
