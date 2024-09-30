@@ -1,14 +1,15 @@
 import { Button } from "antd-mobile";
 import React from "react";
+import thimg from "../../assets/thomsologo.webp";
 
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 
 const Home = () => {
   return (
-    <div style={{width:"100vw",height:"100vh",overflowX:"hidden"}}>
+    <div style={{width:"100vw",height:"100vh",overflowX:"hidden",backgroundColor:"gray"}}>
       <Navbar />
-      {localStorage.getItem("token") && (
+      {localStorage.getItem("token") ? (
         <>
           <div
             style={{
@@ -43,7 +44,11 @@ const Home = () => {
             </Link>
           </div>
         </>
-      )}
+      ):(<>
+      <div style={{display:"flex",width:"100vw",height:"90vh",justifyContent:"center",alignItems:"center"}} className="imgwrap">
+        <img style={{width:"100vw",}} src={thimg} className="thiimage" alt="thimg"/>
+        </div>
+      </>)}
     </div>
   );
 };
