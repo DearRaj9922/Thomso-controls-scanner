@@ -6,7 +6,7 @@ import { QrReader } from "react-qr-reader";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import Profile from "../../separate";
+import Profile from "../../separate1";
 const Attachqr = ({ history }) => {
   const headers = { Authorization: `Bearer ${localStorage.getItem("token")}` };
   let navigate = useNavigate();
