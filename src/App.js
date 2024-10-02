@@ -11,6 +11,8 @@ import ThomsoIDComponent from "./Component/ThomsoId";
 import Attachqr from "./Component/AttachQR";
 import Profile from "./separate";
 import EVENTSIDComponent from "./Component/eventInput";
+import Gatescan from "./Component/AttachQR/gateScan.js";
+import Gateinput from "./Component/AttachQR/gateinput.js";
 
 function App(props) {
   useEffect(() => {
@@ -37,12 +39,29 @@ function App(props) {
         />
         <Route
           exact
+          path="/gatecheckinbyid"
+          element={
+            <PrivateRoute
+              component={Gateinput}
+              history={props?.history}
+            />
+          }
+        />
+        <Route
+          exact
           path="/eventsidinput"
           element={
             <PrivateRoute
               component={EVENTSIDComponent}
               history={props?.history}
             />
+          }
+        />
+        <Route
+          exact
+          path="/gatescan"
+          element={
+            <PrivateRoute component={Gatescan} history={props?.history} />
           }
         />
         <Route

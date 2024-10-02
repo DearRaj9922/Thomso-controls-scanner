@@ -22,7 +22,12 @@ const Home = () => {
               backgroundColor:"gray",
             }}
           >
-            <Link to={"/controlscan"}>
+            <Link to={"/gatescan"}>
+            <Button style={{width:"60vw",height:"5vh",fontSize:"25px",display:"flex",justifyContent:"center",alignItems:"center"}} color="primary" fill="solid">
+                Gates scan
+              </Button>
+              </Link>
+              <Link to={"/controlscan"}>
               <Button style={{width:"60vw",height:"5vh",fontSize:"25px",display:"flex",justifyContent:"center",alignItems:"center"}} color="primary" fill="solid">
                 Controls scan
               </Button>
@@ -30,6 +35,11 @@ const Home = () => {
             <Link to={"/eventsScan"}>
               <Button style={{width:"60vw",height:"5vh",fontSize:"25px",display:"flex",justifyContent:"center",alignItems:"center"}} color="primary" fill="solid">
                 Events scan
+              </Button>
+            </Link>
+            <Link to={"/gatecheckinbyid"}>
+              <Button style={{width:"60vw",height:"5vh",fontSize:"25px",display:"flex",justifyContent:"center",alignItems:"center"}} color="primary" fill="solid">
+              Gate Input
               </Button>
             </Link>
             <Link to={"/thomsoidinput"}>
