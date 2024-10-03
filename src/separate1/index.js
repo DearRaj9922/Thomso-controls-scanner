@@ -17,12 +17,12 @@ const Profile = ({ data }) => {
       id: data.thomso_id,
     };
     axios
-      .post("https://api2.thomso.in/apiV1/check_in_participant", obj, {
+      .post("https://api2.thomso.in/apiV1/gate_check_in_participant", obj, {
         headers,
       })
       .then((res) => {
         message.success("Checked In Successfully");
-        navigate(`/controlscan`);
+        navigate(`/`);
       })
       .catch((err) => {
         if (err.response?.data?.message) {
@@ -81,7 +81,7 @@ const Profile = ({ data }) => {
               </div>
             )}
           </div>
-          {data?.checkinbp ? (
+          {data?.gatecheckin ? (
             <p
               className="btn"
               style={{

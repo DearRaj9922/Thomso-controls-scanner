@@ -25,6 +25,27 @@ const Profile = ({ data }) => {
         navigate(`/controlscan`);
       })
       .catch((err) => {
+        if (err.response?.data?.Message) {
+          console.log(err.response.data);
+          message.error(err.response.data.Message);
+        } else {
+          message.error(err.response.data.Message);
+        }
+      });
+  };
+  const gateCheckIn = () => {
+    const obj = {
+      id: data.thomso_id,
+    };
+    axios
+      .post("https://api2.thomso.in/apiV1/check_in_participant", obj, {
+        headers,
+      })
+      .then((res) => {
+        message.success("Checked In Successfully");
+        navigate(`/controlscan`);
+      })
+      .catch((err) => {
         if (err.response?.data?.message) {
           message.error(err.response.data.message);
         } else {
@@ -81,6 +102,30 @@ const Profile = ({ data }) => {
               </div>
             )}
           </div>
+          {data?.gatecheckin?(
+            <p
+            className="btn"
+            style={{
+              
+              width: "auto",
+              padding: "5px 10px 5px 10px",
+              color: "white",
+              height: "auto",
+            }}
+            > Already Checked in from Gate</p>
+          ):( 
+            <p
+            className="btn"
+            style={{
+              
+              width: "auto",
+              padding: "5px 10px 5px 10px",
+              color: "white",
+              height: "auto",
+            }}
+            > Not Checked in from Gate</p>
+         
+        )}
           {data?.checkinbp ? (
             <p
               className="btn"
@@ -91,7 +136,7 @@ const Profile = ({ data }) => {
                 height: "auto",
               }}
             >
-              Aleardy Checked In
+              Already Checked In
             </p>
           ) : (
             <button

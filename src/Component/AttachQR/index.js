@@ -76,11 +76,11 @@ const Attachqr = ({ history }) => {
                     { headers }
                   );
                   const u = response.data;
-                  console.log(result?.text);
-                  console.log(u, "uder");
+                  // console.log(result?.text);
+                  // console.log(u, "uder");
                   setResult(u);
                 } catch (error) {
-                  console.log(result,"fsdf")
+                  // console.log(result,"fsdf")
                   message.error("user not found");
                   console.error("Error:", error);
                 }
