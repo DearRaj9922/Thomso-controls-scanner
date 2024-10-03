@@ -22,7 +22,7 @@ const Profile = ({ data }) => {
       })
       .then((res) => {
         message.success("Checked In Successfully");
-        navigate(`/controlscan`);
+        navigate(`/`);
       })
       .catch((err) => {
         if (err.response?.data?.Message) {
@@ -33,26 +33,7 @@ const Profile = ({ data }) => {
         }
       });
   };
-  const gateCheckIn = () => {
-    const obj = {
-      id: data.thomso_id,
-    };
-    axios
-      .post("https://api2.thomso.in/apiV1/check_in_participant", obj, {
-        headers,
-      })
-      .then((res) => {
-        message.success("Checked In Successfully");
-        navigate(`/controlscan`);
-      })
-      .catch((err) => {
-        if (err.response?.data?.message) {
-          message.error(err.response.data.message);
-        } else {
-          message.error("Something Went Wrong");
-        }
-      });
-  };
+
 
   return (
     <div className="containerNew" style={{ paddingBottom: "20px" }}>

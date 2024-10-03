@@ -58,6 +58,27 @@ const Profile = ({ data }) => {
             <br />
             Accommodation : {data?.accommodation ? <>true</> : <>false</>}
           </h2>
+          {data?.gatecheckin ? (
+            <p
+              className="btn"
+              style={{
+                width: "auto",
+                padding: "5px 10px 5px 10px",
+                color: "white",
+                height: "auto",
+              }}
+            >
+              Aleardy Checked In
+            </p>
+          ) : (
+            <button
+              className="btn"
+              style={{ width: "200px", marginTop: "20px", fontSize: "25px" }}
+              onClick={checkIn}
+            >
+               Gate Check In
+            </button>
+          )}
           <div className="details">
             <div className="collegeDetails">
               <h3 className="heading">College Details</h3>
@@ -81,27 +102,7 @@ const Profile = ({ data }) => {
               </div>
             )}
           </div>
-          {data?.gatecheckin ? (
-            <p
-              className="btn"
-              style={{
-                width: "auto",
-                padding: "5px 10px 5px 10px",
-                color: "white",
-                height: "auto",
-              }}
-            >
-              Aleardy Checked In
-            </p>
-          ) : (
-            <button
-              className="btn"
-              style={{ width: "200px", marginTop: "20px", fontSize: "25px" }}
-              onClick={checkIn}
-            >
-               Gate Check In
-            </button>
-          )}
+          
         </>
       ) : (
         <>
